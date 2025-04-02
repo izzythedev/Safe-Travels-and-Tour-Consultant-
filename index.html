@@ -1,0 +1,46 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        input, button { padding: 10px; margin: 10px; font-size: 16px; }
+        .chat-button { background-color: green; color: white; padding: 10px 20px; text-decoration: none; font-size: 18px; }
+    </style>
+</head>
+<body>
+
+    <h2>Book Your Flight</h2>
+    
+    <label for="from">From:</label>
+    <input type="text" id="from" placeholder="Enter departure city">
+    
+    <label for="to">To:</label>
+    <input type="text" id="to" placeholder="Enter destination">
+    
+    <button onclick="searchFlights()">Search Flights</button>
+
+    <h3 id="result"></h3>
+
+    <br>
+    <a href="https://wa.me/14082121223" class="chat-button">Chat for More Enquiries</a>
+
+    <script>
+        function searchFlights() {
+            let from = document.getElementById('from').value;
+            let to = document.getElementById('to').value;
+
+            if (from && to) {
+                let tripUrl = https://www.trip.com/flights/${from.toLowerCase()}-${to.toLowerCase()}/?search=true;
+                document.getElementById('result').innerHTML = <a href="${tripUrl}" target="_blank">View Flights on Trip.com</a>;
+            } else {
+                alert('Please enter both departure and destination cities.');
+            }
+        }
+    </script>
+
+</body>
+</html>
